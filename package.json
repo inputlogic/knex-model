@@ -1,5 +1,5 @@
 {
-  "name": "knex-model",
+  "name": "knex-prototype",
   "version": "0.0.1",
   "description": "A model schema and validation wrapper for Knex",
   "main": "index.js",

@@ -1,9 +1,9 @@
 var knex = require('knex');
-var knexModel = require('../index');
+var knexPrototype = require('../index');
 
-knexModel.init(knex);
+knexPrototype.init(knex);
 
-knexModel.register('Users', {
+knexPrototype.register('Users', {
   tableName: 'users',
 
   schema: {
@@ -60,6 +60,6 @@ knexModel.register('Users', {
   } 
 });
 
-var Users = knexModel.get('Users');
+var Users = knexPrototype.get('Users');
 
 Users.findOneById

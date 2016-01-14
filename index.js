@@ -6,6 +6,8 @@ module.exports = {
   },
 
   register: function(modelName, model) {
-    _knex()... 
+    if (!_knex) {
+      throw new Error('Must initialize with Knex instance');
+    }
   }
 };
