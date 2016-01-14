@@ -1,7 +1,18 @@
 var knex = require('knex');
 var knexPrototype = require('../index');
 
-knexPrototype.init(knex);
+var db = knex({
+  client: 'mysql2',
+  connection: {
+    host: "127.0.0.1",
+    user: "express",
+    password: "express",
+    database: "prototype"
+  },
+  debug: true
+});
+
+knexPrototype.init(db);
 
 knexPrototype.register('Users', {
   tableName: 'users',
@@ -36,7 +47,7 @@ knexPrototype.register('Users', {
             return done(null, value);
           });
         }
-      }),
+      },
       beforeInsert: function(value, done) {
         done(null, value.toLowerCase().trim());
       }
@@ -60,6 +71,6 @@ knexPrototype.register('Users', {
   } 
 });
 
-var Users = knexPrototype.get('Users');
+// var Users = knexPrototype.get('Users');
 
-Users.findOneById
+// Users.findOneById
