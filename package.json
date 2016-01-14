@@ -11,9 +11,7 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "knex": "^0.9.0",
-    "mocha": "^2.3.4"
-  },
-  "dependencies": {
+    "mocha": "^2.3.4",
     "mysql2": "^0.15.8"
   }
 }
