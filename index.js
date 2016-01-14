@@ -36,11 +36,14 @@ module.exports = {
         }
       }
     })
-    .then(function(result) {
+    .then(function success(result) {
       model.table = function getTable() {
         return _knex(model.tableName);
       };
       models[modelName] = model;
+    })
+    .catch(function error(err) {
+      throw err;
     });
   }
 };
