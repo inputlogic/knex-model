@@ -24,7 +24,14 @@ describe('validation', function() {
         assert(err.length > 0, 'error was found');
         done()
       });
-    })
+    });
+
+    it('should collect errors from custom validations', function(done) {
+      model.validate(data.failsCustomValidation, function(err) {
+        assert(err.length > 0, 'error was found');
+        done()
+      });
+    });
   });
 
   describe('validateStrict function', function() {
@@ -92,6 +99,15 @@ function getModel() {
       buttchicken: {
         type: 'boolean',
         required: true
+      },
+      bio: {
+        type: 'string',
+        required: false,
+        validate: {
+          isAlwaysGoingToFail: function(value, next) {
+            return next(new Error('I don\'t accept anything'));
+          }
+        }
       }
     }
   }
@@ -115,6 +131,10 @@ function getData() {
     invalidType: {
       name: 10,
       buttchicken: true
+    },
+    failsCustomValidation: {
+      name: "batman",
+      bio: "buttchicken"
     }
   }
 }
