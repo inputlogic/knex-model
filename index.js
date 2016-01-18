@@ -1,4 +1,4 @@
-var validation = require('./lib/validation/validation');
+var validation = require('./lib/validation');
 var models = {};
 var _knex;
 
