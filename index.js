@@ -1,6 +1,6 @@
-var _knex;
-
+var validation = require('./lib/validation/validation');
 var models = {};
+var _knex;
 
 module.exports = {
   init: function init(knex) {
@@ -12,8 +12,8 @@ module.exports = {
       throw new Error('Must initialize with Knex instance');
     }
 
+    validation.attachTo(model);
     var schema = model.schema;
-
     var fields = Object.keys(schema);
 
     _knex.schema.createTableIfNotExists(model.tableName, function populateTable(table) {
