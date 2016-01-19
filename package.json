@@ -1,13 +1,25 @@
 {
   "name": "schemakit",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "description": "A schema validation tool",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/inputlogic/schemakit.git"
+  },
+  "keywords": [
+    "schema",
+    "validation"
+  ],
   "author": "Gavin Vickery <gavin@geekforbrains.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/inputlogic/schemakit/issues"
+  },
+  "homepage": "https://github.com/inputlogic/schemakit#readme",
   "devDependencies": {
     "chai": "^3.4.1",
     "knex": "^0.9.0",
