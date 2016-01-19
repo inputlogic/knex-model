@@ -1,17 +1,12 @@
 var assert = require('chai').assert;
-var schemakit = require('../lib/validation');
+var schemakit = require('../lib/schemakit');
 var schema = getSchema();
 var data = getData();
 
-describe('validation', function() {
-  // it('should attach to model', function(done){
-  //   validation.attachTo(model);
-  //   assert.isFunction(model.validate, 'validate was attached to model');
-  //   assert.isFunction(model.validateStrict, 'validateStrict was attached to model');
-  //   done();
-  // });
+describe('schemakit', function() {
 
   describe('validateSpecific function', function() {
+
     it('should say valid (partial) data is valid', function(done) {
       schemakit.validateSpecific(schema, data.validWithRequiredPropertiesMissing, function(err){
         assert.isUndefined(err);
@@ -32,9 +27,11 @@ describe('validation', function() {
         done()
       });
     });
+
   });
 
   describe('validate function', function() {
+
     it('should say valid (partial) data is invalid', function(done) {
       schemakit.validate(schema, data.validWithRequiredPropertiesMissing, function(err){
         assert(err.length > 0, 'error was found');
@@ -54,7 +51,8 @@ describe('validation', function() {
         assert(err.length > 0, 'error was found');
         done()
       });
-    })
+    });
+
   });
 
 });
