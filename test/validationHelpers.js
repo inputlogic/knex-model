@@ -158,15 +158,15 @@ describe('validationHelpers', function() {
     });
 
     it('should validate emails properly', function(done) {
-      var invalidEmailGivenButRequired = validator.schema.check.isEmail("buttchicken.com", true);
-      var validEmailGivenAndRequired = validator.schema.check.isEmail("butt@chicken.com", true);
-      var invalidEmailGivenAsRequired = validator.schema.check.isEmail("buttchicken.com", false);
-      var validEmailGivenButNotWanted = validator.schema.check.isEmail("butt@chicken.com", false);
+      var emailWantedNotGiven = validator.schema.check.isEmail("buttchicken.com", true);
+      var emailWantedAndGiven = validator.schema.check.isEmail("butt@chicken.com", true);
+      var emailNotWantedAndNotGiven = validator.schema.check.isEmail("buttchicken.com", false);
+      var emailNotWantedAndGiven = validator.schema.check.isEmail("butt@chicken.com", false);
 
-      assert(!invalidEmailGivenButRequired, 'rejected invalid email when email required');
-      assert(validEmailGivenAndRequired, 'accepted email when email required');
-      assert(invalidEmailGivenAsRequired, 'accepted non email when email not wanted');
-      assert(!validEmailGivenButNotWanted, 'rejected email when email not wanted');
+      assert(!emailWantedNotGiven, 'rejected invalid email when email required');
+      assert(emailWantedAndGiven, 'accepted email when email required');
+      assert(emailNotWantedAndNotGiven, 'accepted non email when email not wanted');
+      assert(!emailNotWantedAndGiven, 'rejected email when email not wanted');
       done();
     });
   });
