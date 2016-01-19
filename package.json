@@ -1,5 +1,5 @@
 {
-  "name": "knex-model",
+  "name": "knex-prototype",
   "version": "0.0.1",
   "description": "A model schema and validation wrapper for Knex",
   "main": "index.js",
@@ -11,6 +11,11 @@
   "devDependencies": {
     "chai": "^3.4.1",
     "knex": "^0.9.0",
-    "mocha": "^2.3.4"
+    "mocha": "^2.3.4",
+    "mysql2": "^0.15.8"
+  },
+  "dependencies": {
+    "async": "^1.5.2",
+    "validator": "^4.5.0"
   }
 }
