@@ -1,6 +1,6 @@
 var assert = require('chai').assert;
 var validation = require('../lib/validation');
-var model = getModel();
+var schema = getSchema();
 var data = getData();
 
 describe('validation', function() {
@@ -59,11 +59,9 @@ describe('validation', function() {
 
 });
 
-function getModel() {
+function getSchema() {
   return {
-    schema : {
-      _increments: true,
-      _timestamps: true,
+    fields: {
       name: {
         type: 'string',
         required: true,
@@ -110,7 +108,6 @@ function getModel() {
         }
       }
     }
-
   }
 }
 
