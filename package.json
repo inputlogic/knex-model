@@ -1,7 +1,7 @@
 {
-  "name": "knex-prototype",
+  "name": "schemakit",
   "version": "0.0.1",
-  "description": "A model schema and validation wrapper for Knex",
+  "description": "A schema validation tool",
   "main": "index.js",
   "scripts": {
     "test": "mocha --reporter spec"

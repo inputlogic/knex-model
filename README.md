@@ -1,2 +1,3 @@
-# knex-model
-A model schema and validation wrapper for Knex
+# SchemaKit
+
+A schema validation tool.
